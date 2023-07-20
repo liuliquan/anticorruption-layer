@@ -1,0 +1,13 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: anticorruption-layer
+  tags:
+    - typescript
+  annotations:
+    backstage.io/source-location: url:https://github.com/topcoder-platform/anticorruption-layer
+    github.com/project-slug: topcoder-platform/anticorruption-layer
+spec:
+  type: service
+  owner: backstage-dev
+  lifecycle: production
