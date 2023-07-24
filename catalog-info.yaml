@@ -16,6 +16,7 @@ metadata:
   annotations:
     backstage.io/source-location: url:https://github.com/topcoder-platform/anticorruption-layer
     github.com/project-slug: topcoder-platform/anticorruption-layer
+    circleci.com/project-slug: github/topcoder-platform/anticorruption-layer
 spec:
   type: service
   owner: platform
