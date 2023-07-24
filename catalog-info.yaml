@@ -21,7 +21,7 @@ spec:
   type: service
   owner: platform
   lifecycle: deprecated
-  system: Challenge-Services
+  system: Challenge-Core
   providesApis:
     - anticorruption-layer
   consumesApis:
@@ -33,8 +33,9 @@ metadata:
   name: anticorruption-layer
 spec:
   type: openapi
-  lifecycle: production
+  lifecycle: deprecated
   owner: platform
+  system: Challenge-Core
   definition: |
     openapi: 3.0.0
     info:
