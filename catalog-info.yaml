@@ -19,7 +19,8 @@ metadata:
 spec:
   type: service
   owner: platform
-  lifecycle: production
+  lifecycle: deprecated
+  system: Challenge-Services
   providesApis:
     - anticorruption-layer
   consumesApis:
