@@ -2,12 +2,45 @@ apiVersion: backstage.io/v1alpha1
 kind: Component
 metadata:
   name: anticorruption-layer
+  title: Anti Corruption Layer
+  description: gRPC service for topcoder anti-corruption layer. This service writes to the legacy database to keep the legacy system happy and available for all legacy systems that interact with it.
   tags:
     - typescript
+  links:
+    - url: https://github.com/topcoder-platform/anticorruption-layer
+      title: Github Repo
+      icon: web
+    - url: https://app.circleci.com/pipelines/github/topcoder-platform/anticorruption-layer
+      title: CircleCI
+      icon: web
   annotations:
     backstage.io/source-location: url:https://github.com/topcoder-platform/anticorruption-layer
     github.com/project-slug: topcoder-platform/anticorruption-layer
 spec:
   type: service
-  owner: backstage-dev
+  owner: platform
   lifecycle: production
+  providesApis:
+    - anticorruption-layer
+  consumesApis:
+    - resources-api
+---
+apiVersion: backstage.io/v1alpha1
+kind: API
+metadata:
+  name: anticorruption-layer
+spec:
+  type: openapi
+  lifecycle: production
+  owner: platform
+  definition: |
+    openapi: 3.0.0
+    info:
+      title: Anti Corruption Layer
+      version: 1.0.0
+    paths:
+      /health:
+        get:
+          responses:
+            '200':
+              description: ""
